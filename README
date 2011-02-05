@@ -1,17 +1,22 @@
+// Create app on heroku:
 
-// Create app on heroku
+  git clone git://github.com/RobertLowe/heroku-sinatra-pony-gmail-template.git
+  cd heroku-sinatra-pony-gmail-template
+  bundle install
 
-git clone git://github.com/RobertLowe/heroku-sinatra-pony-gmail-template.git
-cd heroku-sinatra-pony-gmail-template
-bundle install
-heroku create my-new-app
+// To run:
+  ruby application.rb
 
-// Optional:
+// Setup heroku:
+
+  heroku create my-new-app
+
+// Optionally add releases and logging if you haven't:
 
   heroku addons:add releases:basic
   heroku addons:upgrade logging:expanded
-  
-//Add your changes
+
+// Add your changes:
 
 git add . 
 git commit -m "I added some stuff"
@@ -19,6 +24,5 @@ git commit -m "I added some stuff"
 git push heroku master
 
 // All done
-
-
 // Build on Ruby 1.9.x w/ Bundler
+// screenshot-template.psd safari cut-out
