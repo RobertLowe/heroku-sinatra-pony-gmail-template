@@ -1,0 +1,170 @@
+- #
+- # Hi there,
+- #
+- # I'm Rob, 
+- # 
+- # I built and designed this little applet, I'm very happy if you reuse it and it saves you some work, but please use your own content and graphics!
+- #
+!!!
+%html
+  %head
+    %title==  Someone, Something
+
+    :plain
+      
+      <link rel="stylesheet" href="stylesheets/application.css" type="text/css" />
+      
+      <script type="text/javascript" src="javascripts/jquery.js"></script>
+      <script type="text/javascript" src="javascripts/jquery.tools.tabs.js"></script>
+      <script type="text/javascript" src="javascripts/jquery.tools.validator.js"></script>
+      <script type="text/javascript" src="javascripts/jquery.960grid.js"></script>
+      <script type="text/javascript" src="javascripts/jquery.easing.js"></script>
+      <script type="text/javascript" src="javascripts/jquery.cycle.js"></script>
+      <script type="text/javascript" src="javascripts/application.js"></script>
+
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-XXXXXX-X']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>   
+
+  %body
+
+    - if sent
+      :plain
+        <script type='text/javascript'>alert('Success! Thank you, I\'ll contact you shortly!');</script>
+
+    .container_12
+      
+      .grid_12#logo{:align=>'right'}
+        %div{:style => 'background-image: url("/images/logo.png");background-position: 500px 50%;background-repeat: no-repeat;height: 105px;'}
+
+      .clear
+      
+      .grid_5#splash
+        %img{:src=>'images/developer.png'}
+
+      .grid_7#about
+        :plain
+          <h1>I'm Someone, I do something</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur, lorem et ultricies <a href='http://www.toronto.ca/'>Toronto</a>, diam mi placerat tellus, id est ut ligula.</p>
+          <p>Lorem ipsum mulla consequat <a href='http://rubyonrails.org/'>Ruby on Rails</a> eget sem rhoncus <a href='http://en.wikipedia.org/wiki/Cascading_Style_Sheets'>CSS</a> ullamcorper nisl lobortis. Praesent in hendrerit <a href='http://jquery.com/'>jQuery</a>. Sed ut metus ac massa accumsan <a href='http://google.com'>search engines</a> eget in eros. Phasellus et tortor erat, nec commodo diam. Nam condimentum feugiat libero, in molestie lorem auctor eu. Morbi molestie blandit justo. Etiam pretium purus sit amet.</p>
+
+      - # hamlify this block and remove inline styles
+      .grid_12#content
+        :plain
+          <div id="accordian">
+            <div class='projects-tab tab' onclick="_gaq.push(['_trackEvent', 'projects', 'clicked'])"></div>
+            <div class='projects-pane pane' style='display:block'>
+              <div style='width:700px'>
+                <a id="previous-project" href="#" onclick="_gaq.push(['_trackEvent', 'projects', 'previous'])">Previous</a>
+                <div id='projects' class='projects'>
+                
+                  <div class='project'>
+                    <img src="images/projects/example.png" width="540" />
+                    <div class="project-details">
+                      <strong>Responsibilties:</strong>
+                      <p>All of it</p>
+                      <strong>Duration:</strong>
+                      <p> Long-time </p>
+                      <a href='http://example.com' target='_blank'>View Site</a>
+                    </div>
+                  </div>
+                  
+                  <div class='project'>
+                    <img src="images/projects/lenin.png" width="540" />
+                    <div class="project-details">
+                      <strong>Responsibilties:</strong>
+                      <p>Lots with things</p>
+                      <strong>Duration:</strong>
+                      <p> Forever </p>
+                    </div>
+                  </div>
+                  
+                </div>
+                <a id="next-project" href="#" onclick="_gaq.push(['_trackEvent', 'projects', 'next'])">Next</a>
+              </div>
+            </div>
+            <div class='services-tab tab' onclick="_gaq.push(['_trackEvent', 'services', 'clicked'])"></div>
+            <div class='services-pane pane'>
+              <div style='width:700px'>
+
+                <h2>How can I help</h2>
+                <h3>Development</h3>
+
+                <div class='development'>
+                  <p>
+                    Lorem ipsum <a href='http://rubyonrails.org' target='_blank'>Ruby on Rails</a> consequat massa eget <strong>HTML</strong> rhoncus nec ullamcorper nisl <strong>JavaScript</strong>. 
+                    Nam condimentum feugiat libero, in molestie lorem auctor eu. Morbi molestie blandit justo. Etiam pretium purus sit amet tellus <a href='http://jquery.com' target='_blank'>jQuery</a> in <a href='http://prototypejs.org' target='_blank'>Prototype</a>.
+                  </p>
+                  <p>
+                    Vestibulum quis nisl quis nisi sollicitudin varius. Cras ultrices nisl id purus.
+                    Dictum facilisis et in metus. Morbi quis enim augue, a semper ante. Integer rhoncus urna eu.
+                  </p>
+                  <p>
+                    Suspendisse nibh erat, posuere sed <a href='http://wordpress.org' target='_blank'>WordPress</a> eu, <a href='http://rubyonrails.org' target='_blank'>Ruby on Rails</a> ac <a href='http://www.sinatrarb.com/' target='_blank'>Sinatra</a>.
+                  </p>
+                </div>
+                <img src='/images/monkey.png' width='220' height='220' />
+
+              </div>
+            </div>
+            
+            <div class='contact-tab tab' onclick="_gaq.push(['_trackEvent', 'contact', 'clicked'])"></div>
+            <div class='contact-pane pane'>
+              <div style='width:680px'>
+                <h2>Get in touch</h2>
+                <h3>Please use the form below</h3>
+
+                <form id='contact-form' action="" method="POST" enctype="multipart/form-data">
+              
+                  <strong>Project Duration</strong>
+                  <select name='project_duration' required='required'>
+                    <option value=''> - Please Select - </option>
+                    <option> Prefer not to say </option>
+                    <option> A few days </option>
+                    <option> 1 week </option>
+                    <option> 2+ weeks </option>
+                    <option> 1 month </option>
+                    <option> 1-3 months </option>
+                    <option> 3-6 months </option>
+                    <option> 1 year </option>
+                  </select><br />
+              
+                  <strong>Project Budget</strong>
+                  <select name='project_budget' required='required'>
+                    <option value=''> - Please Select - </option>
+                    <option> Prefer not to say </option>
+                    <option> 1k - 2k </option>
+                    <option> 2k - 3k </option>
+                    <option> 3k - 5k </option>
+                    <option> 5k+ </option>
+                    <option> Hourly? </option>
+                  </select><br />
+              
+                  <strong>Your email</strong>
+                  <input type='email' name='email' style='width: 210px;' required='required' /><br />
+              
+                  <strong style='vertical-align:top;'>Your message</strong>
+                  <textarea name='message' style='height: 100px; width: 514px;'></textarea><br />
+              
+                  <strong>Attachments?</strong>
+                  <input type='file' name='attachment' /><br />
+              
+                  <input type='submit' value='All done' class='submit' onclick="_gaq.push(['_trackEvent', 'contact', 'submit'])" /><br />
+                </form>
+              </div>
+            </div>
+          </div>
+          
+      
+      .clear
+      
+      .grid_12#copyright
+        ruby <a href='http://www.sinatrarb.com/'>application.rb</a> | <a href='http://www.github.com/robertlowe/personal-site'>Get This Applet</a> | <a href='ma&#105;lto&#58;rob&#64;iblar&#103;z&#46;c&#111;m'>Email</a> | <a href='http://iblargz.com' alt='toronto web developer'>Developed By Rob</a></div>
