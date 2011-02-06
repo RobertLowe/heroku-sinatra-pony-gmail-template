@@ -11,7 +11,7 @@ post '/' do
     :to=>"you@gmail.com",
     :from => params[:email],
     :subject=> "Contact Form",
-    :body => params[:message],
+    :body => "Budget: #{params[:project_budget]}\n\nDuration: #{params[:project_duration]}\n\nMessage: #{params[:message]}",
     :via => :smtp, :smtp => {
       :host => 'smtp.gmail.com',
       :port => '587',
