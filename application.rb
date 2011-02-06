@@ -8,18 +8,20 @@ end
 
 post '/' do
   @options = {
-    :to=>"you@gmail.com",
-    :from => params[:email],
+    :to => "Your Name <you@example.com>",
+    :from => "example.com <you@example.com>",
     :subject=> "Contact Form",
     :body => "Budget: #{params[:project_budget]}\n\nDuration: #{params[:project_duration]}\n\nMessage: #{params[:message]}",
     :via => :smtp, :smtp => {
       :host => 'smtp.gmail.com',
       :port => '587',
-      :user => 'you@gmail.com',
+      :user => 'you@example.com',
       :password => 'password',
       :auth => :plain,
-      :domain => "domain.com"
-     }
+      :domain => "example.com"
+     },
+    :headers => { "Reply-To" => params[:email] }
+     
   }
   
   if params[:attachment] &&
