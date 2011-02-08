@@ -1,0 +1,15 @@
+- # lazy form refresh bug fix
+!!!
+%html
+  %head
+    %title==  Someone, Something
+
+    :plain
+
+  %body
+  
+    :plain
+      <script type='text/javascript'>
+        alert('Success! Thank you, I\'ll contact you shortly!');
+        window.location.replace(window.location.href);  //avoid form post refresh
+      </script>

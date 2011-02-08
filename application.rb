@@ -2,8 +2,13 @@ require 'sinatra'
 require 'haml'
 require 'pony'
 
+# if you want to use newrelic on heroku uncomment the code below
+# configure :production do
+#     require 'newrelic_rpm'
+# end
+
 get '/' do
-  haml :index, :locals => {:sent => false}
+  haml :index
 end
 
 post '/' do
@@ -33,5 +38,5 @@ post '/' do
 
   Pony.mail(@options)
   
-  haml :index, :locals => {:sent => true}
+  haml :reload
 end
